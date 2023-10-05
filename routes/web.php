@@ -17,5 +17,5 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return view('front.index');
 });
-Route::get('/contactme', [ContactController::class, 'contact']);
-Route::post('/send-message', [ContactController::class, 'sendEmail'])->name('contact.send');
+
+Route::post('/send-message', [\App\Http\Controllers\SendEmailController::class, 'sendEmail'])->name('send.email');
